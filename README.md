@@ -10,12 +10,12 @@ Binary fetch is loosely based on the [JavaScript fetch API](https://developer.mo
 ```js
 binaryFetch('http://example.com/file.binary', {
   method: 'GET'
-}, function(res) { // fires 1 or more times during request
+}, (res) => { // fires 1 or more times during request
   return res.arrayBuffer().then((body) => {
     console.log('binary data recieved so far =>');
     console.log(body);
   });
-}).then(function(res) { // fires when request is finished
+}).then((res) => { // fires when request is finished
   return res.arrayBuffer().then((body) => {
     console.log('all binary data recieved =>');
     console.log(body);
