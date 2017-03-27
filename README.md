@@ -1,4 +1,4 @@
-# binary-fetch _Alpha_
+# binary-fetch _Beta_
 Fetch binary data with incremental progress
 
 Currently, the only way to access the progress from a request or upload in a browser is with the [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest). However, the the progress data from the XMLHttpRequest API does not give you access to the actual binary data that has been recieved.
