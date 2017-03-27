@@ -1,2 +1,2 @@
-# binary-fetch __Alpha__
+# binary-fetch _Alpha_
 Fetch binary data with progress
