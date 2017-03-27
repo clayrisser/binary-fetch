@@ -50,7 +50,9 @@ class BinaryFetch {
       err.context = e;
       this.reject(err);
     };
-    xhr.onerror = (e, source, lineNumber, colNumber, err) => {
+    xhr.onerror = (e) => {
+      let err = new Error('Fetch error');
+      err.context = e;
       this.reject(err);
     };
     xhr.send(this.options.body);
