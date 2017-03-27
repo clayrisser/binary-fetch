@@ -1,0 +1,22 @@
+{
+  "name": "binary-fetch",
+  "version": "0.0.0",
+  "description": "Fetch binary data with progress",
+  "main": "./src/binaryFetch.js",
+  "repository": "https://github.com/jamrizzi/binary-fetch",
+  "author": "Jam Risser <jam@jamrizzi.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "scripts": {
+    "start": "node ./tools/server.js"
+  }
+}
