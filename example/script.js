@@ -1,26 +1,26 @@
-ready(function() {
+ready(() => {
   binaryFetch('./hello-world.txt', {
     method: 'GET'
-  }, function(res) {
+  }, (res) =>{
     return res.arrayBuffer().then((body) => {
       console.log('progress body =>');
       console.log(body);
     });
-  }).then(function(res) {
+  }).then((res) => {
     console.log('loaded res =>');
     console.log(res);
     return res.arrayBuffer();
-  }).then(function(body) {
+  }).then((body) => {
     console.log('loaded body =>');
     console.log(body);
-  }).catch(function(err) {
+  }).catch((err) => {
     console.error(err);
   });
 });
 
 function ready(cb) {
   if (document.readyState === 'complete') return cb();
-  return document.addEventListener('readystatechange', function() {
+  return document.addEventListener('readystatechange', () => {
     if (document.readyState === 'complete') return cb();
     return null;
   });
