@@ -12,7 +12,7 @@ npm install --save binary-fetch
 ```
 Or
 ```bash
-yard add binary-fetch
+yarn add binary-fetch
 ```
 
 ```js
