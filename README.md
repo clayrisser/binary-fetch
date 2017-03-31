@@ -10,10 +10,6 @@ Binary fetch is loosely based on the [JavaScript fetch API](https://developer.mo
 ```bash
 npm install --save binary-fetch
 ```
-Or
-```bash
-yarn add binary-fetch
-```
 
 ```js
 import binaryFetch from 'binary-fetch';
