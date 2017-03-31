@@ -57,9 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
-# Distribution
-dist/
-
 # Emacs
 \#*\#
 .\#*
