@@ -1,6 +1,6 @@
 {
   "name": "binary-fetch",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Fetch binary data with progress",
   "main": "./lib/binary-fetch.js",
   "repository": "https://github.com/jamrizzi/binary-fetch",
