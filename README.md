@@ -7,6 +7,14 @@ Binary fetch solves this problem by giving you immediate access to the binary da
 
 Binary fetch is loosely based on the [JavaScript fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
+```bash
+npm install --save binary-fetch
+```
+Or
+```bash
+yard add binary-fetch
+```
+
 ```js
 import binaryFetch from 'binary-fetch';
 
