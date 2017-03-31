@@ -8,6 +8,8 @@ Binary fetch solves this problem by giving you immediate access to the binary da
 Binary fetch is loosely based on the [JavaScript fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 ```js
+import binaryFetch from 'binary-fetch';
+
 binaryFetch('http://example.com/file.binary', {
   method: 'GET'
 }, (res) => { // fires 1 or more times during request
