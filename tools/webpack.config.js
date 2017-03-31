@@ -1,9 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
+const _ = require('lodash');
+const path = require('path');
+const webpack = require('webpack');
 
 const VERBOSE = process.argv.includes('--verbose');
 
-module.exports = {
+const config = {
   stats: {
     colors: true,
     reasons: true,
@@ -16,20 +17,17 @@ module.exports = {
     cachedAssets: VERBOSE
   },
   context: path.resolve(__dirname, '../'),
-  entry: {
-    'binary-fetch': path.resolve(__dirname, '../src/binaryFetch.js'),
-    'binary-fetch.min': path.resolve(__dirname, '../src/binaryFetchGlobal.js')
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '../dist/')
-  },
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: '/node_modules/',
-        loaders: ['babel-loader']
+        loader: 'babel-loader',
+        options: JSON.stringify({
+          presets: [
+            'es2015'
+          ]
+        })
       }
     ]
   },
@@ -40,3 +38,26 @@ module.exports = {
     })
   ]
 };
+
+const libConfig = _.assign({}, config, {
+  entry: {
+    'binary-fetch': path.resolve(__dirname, '../src/binaryFetch.js')
+  },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../lib/'),
+    libraryTarget: 'commonjs2'
+  }
+});
+
+const globConfig = _.assign({}, config, {
+  entry: {
+    'binary-fetch.min': path.resolve(__dirname, '../src/binaryFetchGlobal.js')
+  },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../lib/')
+  }
+});
+
+module.exports = [libConfig, globConfig];

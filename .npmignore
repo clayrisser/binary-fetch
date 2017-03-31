@@ -1,0 +1,11 @@
+example/
+src/
+tools/
+.gitignore
+.editorconfig
+yarn.lock
+
+# Emacs
+\#*\#
+.\#*
+~*

@@ -1,8 +1,8 @@
 {
   "name": "binary-fetch",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Fetch binary data with progress",
-  "main": "./dist/binary-fetch.js",
+  "main": "./lib/binary-fetch.js",
   "repository": "https://github.com/jamrizzi/binary-fetch",
   "author": "Jam Risser <jam@jamrizzi.com>",
   "license": "MIT",
@@ -10,6 +10,7 @@
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.2.2",
+    "babel-preset-es2015": "^6.24.0",
     "fs-extra-promise": "^0.4.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
@@ -17,9 +18,13 @@
     "webpack-dev-server": "^2.4.2",
     "winston": "^2.3.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-stage-2": "^6.22.0"
+  },
   "scripts": {
-    "start": "node ./tools/server.js",
-    "build": "node ./tools/run.js build"
+    "build": "node ./tools/run.js build",
+    "clean": "node ./tools/run.js clean",
+    "start": "node ./tools/run.js start"
   }
 }

@@ -70,21 +70,23 @@ class BinaryFetch {
     let headersRaw = xhr.getAllResponseHeaders();
     let headersArray = headersRaw.split('\n');
     let headers = {};
-    headersArray.map((header) => {
+    for (let i = 0; i < headersArray.length; i++) {
+      let header = headersArray[i];
       let key = header.substring(0, header.indexOf(':'));
       if (key.length > 0) {
         headers[key] = header.substring(header.indexOf(':') + 2, header.length - 1);
       }
-    });
+    }
     return headers;
   }
 
   arrayBuffer(uInt8Array) {
     return new Promise((resolve, reject) => {
       let arrayBuffer = new ArrayBuffer(uInt8Array.length);
-      uInt8Array.map((i, value) => {
+      for (let i = 0; i < uInt8Array.length; i++) {
+        let value = uInt8Array[i];
         arrayBuffer[i] = value;
-      });
+      }
       resolve(arrayBuffer);
     });
   }
@@ -96,7 +98,7 @@ class BinaryFetch {
   }
 }
 
-export default function binaryFetch(src, options, progress) {
+module.exports = function binaryFetch(src, options, progress) {
   return new Promise((resolve, reject) => {
     switch(arguments.length) {
     case 0:
@@ -121,4 +123,4 @@ export default function binaryFetch(src, options, progress) {
     binaryFetch.reject = reject;
     binaryFetch.fetch();
   });
-}
+};
