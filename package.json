@@ -1,8 +1,8 @@
 {
   "name": "binary-fetch",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Fetch binary data with progress",
-  "main": "./src/binaryFetch.js",
+  "main": "./dist/binary-fetch.js",
   "repository": "https://github.com/jamrizzi/binary-fetch",
   "author": "Jam Risser <jam@jamrizzi.com>",
   "license": "MIT",
