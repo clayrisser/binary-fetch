@@ -16,6 +16,7 @@ export default async function publish() {
     childProcess.spawn(`git add ./
     git commit -m "v${version}"
     git tag v${version}
+    git push
     git push --tags`, {
       stdio: 'inherit',
       shell: true
