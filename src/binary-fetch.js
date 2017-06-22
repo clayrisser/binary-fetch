@@ -1,5 +1,3 @@
-import 'babel-polyfill';
-
 class BinaryFetch {
   constructor(src, options) {
     this.src = src;
