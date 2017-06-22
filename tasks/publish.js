@@ -8,7 +8,7 @@ export default async function publish() {
   await new Promise((resolve, reject) => {
     gulp.src('./package.json')
       .pipe($.bump().on('end', () => console.log('bumped')))
-      .pipe(gulp.dest('./'))
+      .pipe(gulp.dest('./').on('end', () => console.log('done')))
       .on('error', reject).on('end', resolve);
   });
   const version = require('../package').version;
