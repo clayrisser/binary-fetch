@@ -1,7 +1,7 @@
 {
   "name": "binary-fetch",
   "description": "Fetch incremental binary packets from a browser",
-  "main": "./binary-fetch.min.js",
+  "main": "./lib/binary-fetch.min.js",
   "authors": [
     "Jam Risser <jam@jamrizzi.com> (https://jam.jamrizzi.com)"
   ],
