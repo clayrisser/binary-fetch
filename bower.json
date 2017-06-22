@@ -1,0 +1,22 @@
+{
+  "name": "binary-fetch",
+  "description": "Fetch incremental binary packets from a browser",
+  "main": "./binary-fetch.min.js",
+  "authors": [
+    "Jam Risser <jam@jamrizzi.com> (https://jam.jamrizzi.com)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jamrizzi/binary-fetch",
+  "ignore": [
+    "**/.*",
+    "node_modules/",
+    "bower_components/",
+    "index.js",
+    "example/",
+    "src/",
+    "tasks/",
+    "package.json",
+    "webpack.config.js",
+    "yarn.lock"
+  ]
+}

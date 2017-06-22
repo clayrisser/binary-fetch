@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 class BinaryFetch {
   constructor(src, options) {
     this.src = src;
@@ -5,7 +7,8 @@ class BinaryFetch {
   }
 
   fetch() {
-    let xhr = new XMLHttpRequest();
+    const XHR = typeof XMLHttpRequest === 'undefined' ? eval('require')('xhr2') : XMLHttpRequest;
+    const xhr = new XHR();
     xhr.open(this.options.method ? this.options.method : 'GET', this.src);
     xhr.overrideMimeType('text\/plain; charset=x-user-defined');
     for (var key in this.options.headers) {

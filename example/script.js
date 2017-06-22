@@ -1,5 +1,5 @@
 ready(() => {
-  binaryFetch('./hello-world.txt', {
+  binaryFetch('https://raw.githubusercontent.com/jamrizzi/examples/master/json/hello-world.json', {
     method: 'GET'
   }, (res) =>{
     return res.arrayBuffer().then((body) => {
