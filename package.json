@@ -1,6 +1,6 @@
 {
   "name": "binary-fetch",
-  "version": "0.0.15",
+  "version": "0.0.39",
   "description": "Fetch incremental binary packets from a browser",
   "main": "./index.js",
   "repository": "https://jamrizzi.com",
@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "delay": "^2.0.0",
     "xhr2": "^0.1.4"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-bump": "^2.7.0",
+    "gulp-fn": "^0.0.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^3.0.0",
