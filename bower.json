@@ -16,6 +16,7 @@
     "src/",
     "tasks/",
     "package.json",
+    "bower.json",
     "webpack.config.js",
     "yarn.lock"
   ]
