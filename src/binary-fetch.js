@@ -1,3 +1,5 @@
+if (!global._babelPolyfill) require('babel-polyfill');
+
 class BinaryFetch {
   constructor(src, options) {
     this.src = src;
