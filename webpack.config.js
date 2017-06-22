@@ -22,7 +22,7 @@ export default {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname)
+    path: path.resolve(__dirname, './dist/')
   },
   module: {
     loaders: [
