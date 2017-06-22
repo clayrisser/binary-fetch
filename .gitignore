@@ -60,6 +60,7 @@ typings/
 # Emacs
 \#*\#
 .\#*
-~*
+*~
 
-lib/
+# Application
+index.js
