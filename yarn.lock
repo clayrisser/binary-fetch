@@ -2159,6 +2159,14 @@ gulp-clean@^0.3.2:
     rimraf "^2.2.8"
     through2 "^0.4.2"
 
+gulp-fn@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-fn/-/gulp-fn-0.0.0.tgz#354393f0830916a195d73000ff06eabd9b672d48"
+  dependencies:
+    gulp "^3.6.2"
+    gulp-util "^2.2.14"
+    through2 "^0.4.2"
+
 gulp-load-plugins@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/gulp-load-plugins/-/gulp-load-plugins-1.5.0.tgz#4c419f7e5764d9a0e33061bab9618f81b73d4171"
@@ -2223,7 +2231,7 @@ gulp-util@^3.0.0:
     through2 "^2.0.0"
     vinyl "^0.5.0"
 
-gulp@^3.9.1:
+gulp@^3.6.2, gulp@^3.9.1:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-3.9.1.tgz#571ce45928dd40af6514fc4011866016c13845b4"
   dependencies:

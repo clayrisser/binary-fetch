@@ -9,9 +9,9 @@ export default async function publish() {
   await new Promise((resolve, reject) => {
     gulp.src('./package.json')
       .pipe($.bump())
-      // .pipe((f) => {
-      //   return f;
-      // })
+      .pipe($.fn((f) => {
+        return f;
+      }))
       .pipe(gulp.dest('./'))
       .on('error', reject).on('end', resolve);
   });
