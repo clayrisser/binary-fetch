@@ -12,7 +12,7 @@ export default async function publish() {
       .pipe($.bump())
       .pipe($.fn((f) => {
         console.log(_.keys(f));
-        console.log(f._contents);
+        console.log(f);
         return f;
       }))
       .pipe(gulp.dest('./'))
