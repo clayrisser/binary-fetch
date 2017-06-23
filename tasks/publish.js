@@ -7,17 +7,18 @@ import _ from 'lodash';
 const $ = gulpLoadPlugins();
 
 export default async function publish() {
+  let version = '';
   await new Promise((resolve, reject) => {
     gulp.src('./package.json')
       .pipe($.bump())
       .pipe($.fn((f) => {
-        console.log(f._contents.toString('utf8'));
+        const body = JSON.parse(f._contents.toString('utf8'));
+        version = body.version;
         return f;
       }))
       .pipe(gulp.dest('./'))
       .on('error', reject).on('end', resolve);
   });
-  const version = require('../package').version;
   console.log(version);
   await new Promise((resolve, reject) => {
     childProcess.spawn(`git add ./
