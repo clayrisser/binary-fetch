@@ -2,6 +2,7 @@ import childProcess from 'child_process';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import delay from 'delay';
+import _ from 'lodash';
 
 const $ = gulpLoadPlugins();
 
@@ -10,7 +11,7 @@ export default async function publish() {
     gulp.src('./package.json')
       .pipe($.bump())
       .pipe($.fn((f) => {
-        console.log(f.toString('utf8'));
+        console.log(_.keys(f));
         return f;
       }))
       .pipe(gulp.dest('./'))
