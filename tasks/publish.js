@@ -11,8 +11,7 @@ export default async function publish() {
     gulp.src('./package.json')
       .pipe($.bump())
       .pipe($.fn((f) => {
-        console.log(_.keys(f));
-        console.log(f);
+        console.log(f._contents.toString('utf8'));
         return f;
       }))
       .pipe(gulp.dest('./'))

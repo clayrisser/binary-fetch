@@ -1,6 +1,6 @@
 {
   "name": "binary-fetch",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "Fetch incremental binary packets from a browser",
   "main": "./index.js",
   "repository": "https://jamrizzi.com",
