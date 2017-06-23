@@ -10,12 +10,9 @@ export default async function publish() {
     gulp.src('./package.json')
       .pipe($.bump())
       .pipe(gulp.dest('./'))
-      .on('error', reject).on('end', async () => {
-        await delay(1000);
-        return resolve();
-      });
-  });
-  const version = eval('require')('../package').version;
+      .on('error', reject).on('end', resolve);
+  }).then(async () => await delay(5000));
+  const version = require('../package').version;
   console.log(version);
   await new Promise((resolve, reject) => {
     childProcess.spawn(`git add ./
