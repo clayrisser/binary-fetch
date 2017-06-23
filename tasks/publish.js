@@ -19,7 +19,6 @@ export default async function publish() {
       .pipe(gulp.dest('./'))
       .on('error', reject).on('end', resolve);
   });
-  console.log(version);
   await new Promise((resolve, reject) => {
     childProcess.spawn(`git add ./
     git commit -m "v${version}"
