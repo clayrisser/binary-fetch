@@ -15,7 +15,7 @@ export default async function publish() {
         return resolve();
       });
   });
-  const version = require('../package').version;
+  const version = eval('require')('../package').version;
   console.log(version);
   await new Promise((resolve, reject) => {
     childProcess.spawn(`git add ./
