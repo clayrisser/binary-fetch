@@ -103,7 +103,7 @@ class BinaryFetch {
 }
 
 module.exports = function binaryFetch(src, options, progress) {
-  const _binaryFetch = new BinaryFetch(src, options);
+  let _resolve = () => {};
   let xhr = null;
   let promise = new Promise((resolve, reject) => {
     switch(arguments.length) {
@@ -123,14 +123,16 @@ module.exports = function binaryFetch(src, options, progress) {
       }
       break;
     }
-    _binaryFetch.progress = progress;
-    _binaryFetch.resolve = resolve;
-    _binaryFetch.reject = reject;
-    xhr = _binaryFetch.fetch();
+    let binaryFetch = new BinaryFetch(src, options);
+    _resolve = resolve;
+    binaryFetch.progress = progress;
+    binaryFetch.resolve = resolve;
+    binaryFetch.reject = reject;
+    xhr = binaryFetch.fetch();
   });
   promise.terminate = () => {
     if (xhr) xhr.abort();
-    return _binaryFetch.resolve(false);
+    return _resolve(false);
   };
   return promise;
 };
