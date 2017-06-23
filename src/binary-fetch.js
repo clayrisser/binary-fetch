@@ -59,6 +59,7 @@ class BinaryFetch {
       this.reject(err);
     };
     xhr.send(this.options.body);
+    return xhr;
   }
 
   strToUint8Array(str) {
@@ -102,7 +103,8 @@ class BinaryFetch {
 }
 
 module.exports = function binaryFetch(src, options, progress) {
-  return new Promise((resolve, reject) => {
+  let xhr = null;
+  const promise = new Promise((resolve, reject) => {
     switch(arguments.length) {
     case 0:
       reject(new Error('Missing src argument'));
@@ -124,6 +126,10 @@ module.exports = function binaryFetch(src, options, progress) {
     binaryFetch.progress = progress;
     binaryFetch.resolve = resolve;
     binaryFetch.reject = reject;
-    binaryFetch.fetch();
+    xhr = binaryFetch.fetch();
   });
+  promise.terminate = () => {
+    if (xhr) xhr.abort();
+  };
+  return promise;
 };
