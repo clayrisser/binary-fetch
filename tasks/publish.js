@@ -1,6 +1,7 @@
 import childProcess from 'child_process';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import delay from 'delay';
 
 const $ = gulpLoadPlugins();
 
@@ -9,7 +10,10 @@ export default async function publish() {
     gulp.src('./package.json')
       .pipe($.bump())
       .pipe(gulp.dest('./'))
-      .on('error', reject).on('end', resolve);
+      .on('error', reject).on('end', async () => {
+        await delay(1000);
+        return resolve();
+      });
   });
   const version = require('../package').version;
   console.log(version);

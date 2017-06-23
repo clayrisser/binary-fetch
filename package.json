@@ -1,6 +1,6 @@
 {
   "name": "binary-fetch",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Fetch incremental binary packets from a browser",
   "main": "./index.js",
   "repository": "https://jamrizzi.com",
@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "delay": "^2.0.0",
     "xhr2": "^0.1.4"
   },
   "devDependencies": {
