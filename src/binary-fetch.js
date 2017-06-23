@@ -102,7 +102,8 @@ class BinaryFetch {
   }
 }
 
-module.exports = function binaryFetch(src, options, progress) {
+module.exports = function(src, options, progress) {
+  let binaryFetch = new BinaryFetch(src, options);
   let xhr = null;
   let promise = new Promise((resolve, reject) => {
     switch(arguments.length) {
@@ -122,7 +123,6 @@ module.exports = function binaryFetch(src, options, progress) {
       }
       break;
     }
-    let binaryFetch = new BinaryFetch(src, options);
     binaryFetch.progress = progress;
     binaryFetch.resolve = resolve;
     binaryFetch.reject = reject;
@@ -130,9 +130,7 @@ module.exports = function binaryFetch(src, options, progress) {
   });
   promise.terminate = () => {
     if (xhr) xhr.abort();
-    promise = promise.then(() => {
-      throw new Err('Terminated');
-    });
+    return binaryFetch.resolve(false);
   };
   return promise;
 };
