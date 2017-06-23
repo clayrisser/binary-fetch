@@ -104,7 +104,7 @@ class BinaryFetch {
 
 module.exports = function binaryFetch(src, options, progress) {
   let xhr = null;
-  const promise = new Promise((resolve, reject) => {
+  let promise = new Promise((resolve, reject) => {
     switch(arguments.length) {
     case 0:
       reject(new Error('Missing src argument'));
@@ -130,6 +130,9 @@ module.exports = function binaryFetch(src, options, progress) {
   });
   promise.terminate = () => {
     if (xhr) xhr.abort();
+    promise = promise.then(() => {
+      throw new Err('Terminated');
+    });
   };
   return promise;
 };
