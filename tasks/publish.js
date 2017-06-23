@@ -10,7 +10,7 @@ export default async function publish() {
     gulp.src('./package.json')
       .pipe($.bump())
       .pipe($.fn((f) => {
-        console.log(f);
+        console.log(f.toString());
         return f;
       }))
       .pipe(gulp.dest('./'))
