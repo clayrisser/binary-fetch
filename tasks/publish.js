@@ -9,9 +9,12 @@ export default async function publish() {
   await new Promise((resolve, reject) => {
     gulp.src('./package.json')
       .pipe($.bump())
+      // .pipe((f) => {
+      //   return f;
+      // })
       .pipe(gulp.dest('./'))
       .on('error', reject).on('end', resolve);
-  }).then(async () => await delay(5000));
+  });
   const version = require('../package').version;
   console.log(version);
   await new Promise((resolve, reject) => {
