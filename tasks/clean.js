@@ -1,4 +1,3 @@
-import fs from 'fs-extra-promise';
 import path from 'path';
 import projPath from 'proj-path';
 import gitignoreClean from 'gitignore-clean';
