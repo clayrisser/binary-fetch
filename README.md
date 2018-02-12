@@ -28,3 +28,8 @@ binaryFetch('http://example.com/file.binary', {
   });
 });
 ```
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/jamrizzi/binary-fetch/badge.svg?style=beer-square)](https://beerpay.io/jamrizzi/binary-fetch)  [![Beerpay](https://beerpay.io/jamrizzi/binary-fetch/make-wish.svg?style=flat-square)](https://beerpay.io/jamrizzi/binary-fetch?focus=wish)
