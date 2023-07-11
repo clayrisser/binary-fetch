@@ -1,6 +1,8 @@
 # binary-fetch _Beta_
 Fetch incremental binary packets from a browser
 
+![](assets/binary-fetch.png)
+
 Currently, the only way to access the progress from a request or upload in a browser is with the [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest). However, the the progress data from the XMLHttpRequest API does not give you access to the actual binary data that has been recieved.
 
 Binary fetch solves this problem by giving you immediate access to the binary data while it is being recieved.
